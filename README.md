@@ -1,8 +1,4 @@
-![alt text][logo]
-
-[logo]:https://crdroid.net/img/logo.png "crDroid Android"
-
-### To get started with building crDroid GSI,
+### To get started with building RisingOS GSI,
 you'll need to get familiar with [Git and Repo](https://source.android.com/source/using-repo.html) as well as [How to build a GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F).
 
 
@@ -12,20 +8,20 @@ As a first step, you'll have to create and enter a folder with the appropriate n
 To do that, run these commands:
 
 ```bash
-   mkdir crDroid
-   cd crDroid
+   mkdir RisingOS
+   cd RisingOS
 ```
 
 ### To initialize your local repository, run this command:
 
 ```bash
-   repo init -u https://github.com/crdroidandroid/android.git -b 13.0
+   repo init -u https://github.com/RisingTechOSS/android -b thirteen
 ```
  
 
 ### Clone the Manifest to add necessary dependencies for gsi:
  
-    git clone https://github.com/naz664/treble_manifest.git .repo/local_manifests  -b 13
+    git clone https://github.com/MisterZtr/treble_manifest.git .repo/local_manifests  -b 13
   
 
 
@@ -50,7 +46,7 @@ Copy the patches folder to rom folder and in rom folder
  
  ```
     cd device/phh/treble
-    bash generate.sh crDroid
+    bash generate.sh RisingOS
  ```
 
 ### Turn on caching to speed up build
@@ -102,5 +98,5 @@ These people have helped this project in some way or another, so they should be 
 - [Peter Cai](https://github.com/PeterCxy)
 - [Iceows](https://github.com/Iceows)
 - [ChonDoit](https://github.com/ChonDoit)
-
+- [Nazim N ](https://github.com/naz664)
 
