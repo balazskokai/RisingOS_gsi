@@ -46,7 +46,18 @@ Copy the patches folder to rom folder and in rom folder
  
  ```
     cd device/phh/treble
+ ```
+
+ For vanilla version,
+
+ ```
     bash generate.sh RisingOS
+ ```
+
+ For gapps version,
+
+ ```
+    bash generate.sh RisingOS+GApps
  ```
 
 ### Turn on caching to speed up build
