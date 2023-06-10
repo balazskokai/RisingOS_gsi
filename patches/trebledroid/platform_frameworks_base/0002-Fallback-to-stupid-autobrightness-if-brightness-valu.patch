@@ -1,7 +1,7 @@
-From d2e4ae3f881f254a5e3701651f332a206d3e2f54 Mon Sep 17 00:00:00 2001
+From af508e5c59892256578fae1d10d07c006b79827e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 5 Oct 2021 17:59:16 -0400
-Subject: [PATCH 02/34] Fallback to stupid autobrightness if brightness values
+Subject: [PATCH 02/40] Fallback to stupid autobrightness if brightness values
  are broken
 
 This is needed because of:
@@ -14,7 +14,7 @@ Change-Id: Ieb679b34239013a5e31b34cb010b12febd9ef6d9
  1 file changed, 7 insertions(+), 2 deletions(-)
 
 diff --git a/services/core/java/com/android/server/display/DisplayDeviceConfig.java b/services/core/java/com/android/server/display/DisplayDeviceConfig.java
-index fa812c163643..e8e2fc69e646 100644
+index 927874373df8..a5cc8cb12b79 100644
 --- a/services/core/java/com/android/server/display/DisplayDeviceConfig.java
 +++ b/services/core/java/com/android/server/display/DisplayDeviceConfig.java
 @@ -650,9 +650,14 @@ public class DisplayDeviceConfig {

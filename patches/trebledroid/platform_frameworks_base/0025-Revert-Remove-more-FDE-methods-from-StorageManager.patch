@@ -1,7 +1,7 @@
-From c6dc0259e34f3dc2dc9ea93a6519f9f6484edf7d Mon Sep 17 00:00:00 2001
+From 59951dfb626b63955f6deb4c7c9198402b9f45c5 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Sat, 15 Oct 2022 09:33:56 +0000
-Subject: [PATCH 27/34] Revert "Remove more FDE methods from StorageManager"
+Subject: [PATCH 31/40] Revert "Remove more FDE methods from StorageManager"
 
 This reverts commit bd13f84152449a3ead6fa8604fd31f48c0224676.
 ---
@@ -10,7 +10,7 @@ This reverts commit bd13f84152449a3ead6fa8604fd31f48c0224676.
  2 files changed, 65 insertions(+), 8 deletions(-)
 
 diff --git a/core/java/android/os/storage/StorageManager.java b/core/java/android/os/storage/StorageManager.java
-index e0989b8d9f1f..c610a6862864 100644
+index 497bfa6380bc..646a7095c1b3 100644
 --- a/core/java/android/os/storage/StorageManager.java
 +++ b/core/java/android/os/storage/StorageManager.java
 @@ -1681,13 +1681,18 @@ public class StorageManager {
@@ -39,7 +39,7 @@ index e0989b8d9f1f..c610a6862864 100644
       */
      public static boolean isEncrypted() {
          return RoSystemProperties.CRYPTO_ENCRYPTED;
-@@ -1700,7 +1705,7 @@ public class StorageManager {
+@@ -1696,7 +1701,7 @@ public class StorageManager {
      /** {@hide}
       * Is this device file encrypted?
       * @return true for file encrypted. (Implies isEncrypted() == true)
@@ -48,7 +48,7 @@ index e0989b8d9f1f..c610a6862864 100644
       */
      @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
      public static boolean isFileEncryptedNativeOnly() {
-@@ -1710,6 +1715,54 @@ public class StorageManager {
+@@ -1706,6 +1711,54 @@ public class StorageManager {
          return RoSystemProperties.CRYPTO_FILE_ENCRYPTED;
      }
  
