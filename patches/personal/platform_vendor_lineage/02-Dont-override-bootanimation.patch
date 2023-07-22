@@ -1,0 +1,18 @@
+From cbbfa1a1da9f16faee6585258f4c26d2ab43b23b Mon Sep 17 00:00:00 2001
+From: MisterZtr <andey2004586@gmail.com>
+Date: Sat Jul 22 09:50:36 2023 +0300
+Subject: [PATCH] Dont override bootanimation
+
+diff --git a/config/rising.mk b/config/rising.mk
+index c047b3ad..31cee182 100644
+--- a/config/rising.mk
++++ b/config/rising.mk
+@@ -130,6 +130,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
+     PRIVATE_BUILD_DESC="cheetah-user 13 TQ3A.230605.012 10204971 release-keys"
+
+ endif
+-
+-PRODUCT_COPY_FILES += vendor/lineage/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+-
+
+

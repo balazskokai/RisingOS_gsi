@@ -8,14 +8,14 @@ As a first step, you'll have to create and enter a folder with the appropriate n
 To do that, run these commands:
 
 ```bash
-   mkdir RisingOS
-   cd RisingOS
+mkdir RisingOS
+cd RisingOS
 ```
 
 ### To initialize your local repository, run this command:
 
 ```bash
-   repo init -u https://github.com/RisingTechOSS/android -b thirteen
+repo init --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
 ```
  
 
@@ -37,27 +37,27 @@ repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$
 Copy the patches folder to rom folder and in rom folder
 
 ```
-   bash patches/apply-patches.sh .
+bash patches/apply-patches.sh .
 ```
 
 ## Generating Rom Makefile
 
- In rom folder,
+ Clone this repository and then copy pixel.mk to device/phh/treble in rom folder. Then run the following commands:,
  
  ```
-    cd device/phh/treble
+cd device/phh/treble
  ```
 
  For vanilla version,
 
  ```
-    bash generate.sh RisingOS
+bash generate.sh RisingOS
  ```
 
  For gapps version,
 
  ```
-    bash generate.sh RisingOS+GApps
+bash generate.sh RisingOS+GApps
  ```
 
 ### Turn on caching to speed up build
@@ -89,8 +89,8 @@ If you want to compress the build.
 In rom folder,
 
    ```
-        cd out/target/product/tdgsi_arm64_ab
-        xz -z -k system.img 
+cd out/target/product/tdgsi_arm64_ab
+xz -z -k system.img
    ```
 
 
