@@ -20,6 +20,7 @@ index b35d34a599..456c5a935c 100644
 --- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 +++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 @@ -26,6 +26,7 @@
+ #include <libxml/parser.h>
  #include <libxml/xinclude.h>
  #include <media/convert.h>
  #include <cutils/properties.h>
