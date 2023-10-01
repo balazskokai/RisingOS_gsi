@@ -1,0 +1,27 @@
+From 0abb2015a2df2a6eeb55076d1d1a0ca2b8836a6a Mon Sep 17 00:00:00 2001
+From: MisterZtr <andey2004586@gmail.com>
+Date: Sat Sep 23 15:00:30 2023 +0300
+Subject: gapps: Switch to MindTheGapps
+
+diff --git a/gapps.mk b/gapps.mk
+index 15e12a9..dc2bea1 100644
+--- a/gapps.mk
++++ b/gapps.mk
+@@ -41,12 +41,10 @@ PRODUCT_PACKAGES += \
+ $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+ endif
+
+-#Pixel Experience gapps
++#Mind The Gapps
+ ifneq ($(wildcard vendor/gapps),)
+ IS_PHONE := true
+-$(call inherit-product,vendor/gapps/config.mk)
+-PRODUCT_PACKAGES += \
+-       phh-overrides \
+-	   com.simplemobiletools.gallery.pro \
++RISING_PACKAGE_TYPE := GMS
++$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
+ endif
+--
+2.25.1
