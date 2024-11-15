@@ -1,113 +1,16 @@
-### To get started with building RisingOS GSI,
-you'll need to get familiar with [Git and Repo](https://source.android.com/source/using-repo.html) as well as [How to build a GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F).
+Everything is Written in the script, edit script for gapps/vanilla or for other arch
 
+Android Version: 13 Tiramisu
+Currently set arch: arm32 binder64 ab
 
-### Create the directories
+just edit a64 to arm64 to build arm64 ab variant
 
-As a first step, you'll have to create and enter a folder with the appropriate name.
-To do that, run these commands:
+How to Build:
 
-```bash
-mkdir RisingOS
-cd RisingOS
-```
+mkdir build_ros
+git clone https://github.com/balazskokai/RisingOS_gsi -b thirteen build_ros
+cd build_ros
 
-### To initialize your local repository, run this command:
+And finally:
 
-```bash
-repo init --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
-```
- 
-
-### Clone the Manifest to add necessary dependencies for gsi:
- 
-    git clone https://github.com/MisterZtr/treble_manifest.git .repo/local_manifests  -b 13
-  
-
-
-### Afterwards, sync the source by running this command:
-
-```bash
-repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-```
-
-
-### After syncing, apply the patches:
-
-Copy the patches folder to rom folder and in rom folder
-
-```
-bash patches/apply-patches.sh .
-```
-
-## Generating Rom Makefile
-
- Clone this repository and then copy pixel.mk to device/phh/treble in rom folder. Then run the following commands:,
- 
- ```
-cd device/phh/treble
- ```
-
- For vanilla version,
-
- ```
-bash generate.sh RisingOS
- ```
-
- For gapps version,
-
- ```
-bash generate.sh RisingOS+GApps
- ```
-
-### Turn on caching to speed up build
-
-You can speed up subsequent builds by adding these lines to your ~/.bashrc OR ~/.zshrc file:
-
-```
-export USE_CCACHE=1
-export CCACHE_COMPRESS=1
-export CCACHE_MAXSIZE=50G # 50 GB
-``` 
-
-## Compilation 
-
-In rom folder,
-
- ```
- . build/envsetup.sh
- ccache -M 50G -F 0
- lunch treble_arm64_bvN-userdebug 
- make systemimage -j$(nproc --all)
- ```
-
-
-## Compress
-
-After compilation,
-If you want to compress the build.
-In rom folder,
-
-   ```
-cd out/target/product/tdgsi_arm64_ab
-xz -z -k system.img
-   ```
-
-
-## Troubleshoot
- 
-If you face any conflicts while applying patches, apply the patch manually.
-
-
-
-## Credits
-These people have helped this project in some way or another, so they should be the ones who receive all the credit:
-- [crDroid Team](https://github.com/crdroidandroid)
-- [Phhusson](https://github.com/phhusson)
-- [AndyYan](https://github.com/AndyCGYan)
-- [Ponces](https://github.com/ponces)
-- [Peter Cai](https://github.com/PeterCxy)
-- [Iceows](https://github.com/Iceows)
-- [ChonDoit](https://github.com/ChonDoit)
-- [Nazim N ](https://github.com/naz664)
-
+bash build.sh
