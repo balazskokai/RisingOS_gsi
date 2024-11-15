@@ -19,7 +19,7 @@ initRepos() {
 
 syncRepos() {
     echo "--> Syncing repos"
-    repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+    repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --depth=1 --prune -j$(nproc --all)
     echo
 }
 
